@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>简化聊天室</title>
+    <link rel="bookmark"  type="image/x-icon"  href="images/chat.ico"/>
+    <link rel="shortcut icon" href="images/chat.ico">
+    <link rel="icon" href="img/images/chat.ico">
+    <link rel="stylesheet" href="js/bootstrap.css" type="text/css" />
+    <style>
+        body{
+            font-size: 20px;
+            font-family: "楷体";
+        }
+        .contentMain{
+            width: 700px;
+            height: 800px;
+            position:absolute;
+            left:5%;
+            top:6%;
+            z-index: 999;
+        }
+        .welcome{
+            height: 6%;
+            font-family: "楷体";
+            font-size:35px;
+            background-color: #d0e9c6;
+        }
+        .chatContent{
+            height:600px;
+            border-radius: 5px;
+            border: 1px solid #555555;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        .talkString{
+            margin-top:15px;
+        }
+        .myTalk{
+            border:1px solid #00B7FF;
+            border-radius: 5px;
+            width: auto;
+            padding: 5px;
+            background-color: #d6e9c6;
+        }
+        #content{
+            padding:2px 10px 2px 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="welcome" align="center">
+    欢迎您: <span id="name"><%=name%></span>
+</div>
+<div class="bgImage">
+    <img src="images/005.jpg" style="width: 100%;height: 100%"/>
+</div>
+<div class="contentMain">
+
+    <div class="chatContent">
+        <span>聊天记录:</span>
+        <div id="content"></div>
+    </div>
+    <div class="row">
+        <span class="col-md-10">
+            <span class="col-md-2"> 内容:</span>
+            <span class="col-md-10">
+                <input type="text" id="myWord" class="form-control" placeholder="请输入要发送的内容"/>
+            </span>
+        </span>
+        <span class="col-md-2">
+            <button class="btn btn-default">发送</button>
+        </span>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/socket.io.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

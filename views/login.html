@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录简化聊天室</title>
+    <link rel="bookmark"  type="image/x-icon"  href="images/chat.ico"/>
+    <link rel="shortcut icon" href="images/chat.ico">
+    <link rel="icon" href="img/images/chat.ico">
+    <link rel="stylesheet" href="js/bootstrap.css" type="text/css" />
+    <style>
+        .tips{
+            font-size: 28px;
+            font-family: "楷体";
+            padding: 10px;
+        }
+        .contentMain{
+            width: 600px;
+            height: 500px;
+            position:absolute;
+            left:35%;
+            top:40%;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+<div class="loginImg" style="margin: 4% 0;">
+    <img src="images/005.jpg" style="width: 100%;"/>
+</div>
+
+<div class="contentMain">
+    <div class="row tips">请先输入你在聊天室的昵称 </div>
+    <div class="row form-group">
+        <span class="col-md-6">
+            <input type="text" id="name" class="form-control" placeholder="昵称"/>
+        </span>
+        <span class="col-md-3">
+            <button class="btn btn-default" id="login">确认</button>
+        </span>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script>
+    $(function(){
+       $('button').click(function(){
+           var name=$('#name').val();
+           $.post('/login',{name:name},function(data){
+               if(data=="success"){
+                   window.location.href='/index';
+               }
+           });
+       })
+    });
+</script>
+</body>
+</html>
