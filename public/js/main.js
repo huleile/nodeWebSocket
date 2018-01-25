@@ -1,9 +1,6 @@
-/**
- * Created by huleile on 2016/2/17.
- */
 $(function(){
 	var name = $('#name').text();
-	var socket = io.connect('http://node.d-heaven.com');
+	var socket = io.connect('http://localhost:3070');
 	socket.on('connected',function(){
 		console.log('已连接');
 		socket.send("系统："+name+" 连接成功");
